@@ -2,6 +2,7 @@
   "name": "node_brandfetch",
   "version": "1.0.0",
   "description": "",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
