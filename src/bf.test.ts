@@ -1,63 +1,51 @@
-import Brandfetch from './branfetch';
-import fetchMock from 'jest-fetch-mock';
+import Brandfetch from "./branfetch";
+import axios from "axios";
 
-describe('Brandfetch', () => {
+// Mocking the axios module
+jest.mock("axios");
+
+describe("Brandfetch", () => {
+  let mockAxios: jest.Mocked<typeof axios>;
+
   beforeEach(() => {
-    fetchMock.resetMocks();
+    // Setting up our mock for axios
+    mockAxios = axios as jest.Mocked<typeof axios>;
   });
 
-  describe('getBrandById', () => {
-    const apiKey = 'K8PPb5wUkS7zwpYylmKTs9qRdxDmMMcT6ZFWBGrv';
-    const brandfetch = new Brandfetch(apiKey);
-    it('should have functions', () => {
-      expect(
-        !!brandfetch.getBrandByDomain && !!brandfetch.searhBrand
-      ).toBeTruthy();
+  it("should fetch brand by domain", async () => {
+    const domain = "example.com";
+    const mockResponse = { data: { brand: "Example" } };
+
+    mockAxios.get.mockResolvedValue(mockResponse);
+
+    const instance = new Brandfetch("testApiKey");
+    const result = await instance.getBrandByDomain(domain);
+
+    expect(mockAxios.get).toHaveBeenCalledWith(`https://api.brandfetch.io/v2/brands/${domain}`, {
+      headers: {
+        Authorization: "Bearer testApiKey",
+      },
     });
-    // it('should return the brand for a valid ID', async () => {
-    //   const id = 123;
-    //   const expectedBrand = { id, name: 'Test Brand' };
-    //   fetchMock.mockResponseOnce(JSON.stringify(expectedBrand));
 
-    //   const brand = await brandfetch.getBrandById(id);
+    expect(result).toEqual(mockResponse.data);
+  });
 
-    //   expect(brand).toEqual(expectedBrand);
-    //   expect(fetchMock.mock.calls[0][0]).toEqual(
-    //     `https://api.brandfetch.io/v1/brands/${id}`
-    //   );
-    //   expect(fetchMock.mock.calls[0][1].headers['Authorization']).toEqual(
-    //     `Bearer ${apiKey}`
-    //   );
-    // });
+  it("should search brand", async () => {
+    const query = "testQuery";
+    const mockResponse = { data: [{ brand: "TestBrand" }] };
 
-    // it('should return null for an invalid ID', async () => {
-    //   const id = 456;
-    //   fetchMock.mockResponseOnce('', { status: 404 });
+    mockAxios.get.mockResolvedValue(mockResponse);
 
-    //   const brand = await brandfetch.getBrandById(id);
+    const instance = new Brandfetch("testApiKey");
+    const result = await instance.searhBrand(query);
 
-    //   expect(brand).toBeNull();
-    //   expect(fetchMock.mock.calls[0][0]).toEqual(
-    //     `https://api.brandfetch.io/v1/brands/${id}`
-    //   );
-    //   expect(fetchMock.mock.calls[0][1].headers['Authorization']).toEqual(
-    //     `Bearer ${apiKey}`
-    //   );
-    // });
+    expect(mockAxios.get).toHaveBeenCalledWith(`https://api.brandfetch.io/v2/brands/${query}`, {
+      headers: {
+        Authorization: "Bearer testApiKey",
+        Referer: "https://example.com/searchIntegrationPage",
+      },
+    });
 
-    // it('should return null if the API request fails', async () => {
-    //   const id = 789;
-    //   fetchMock.mockReject(new Error('API error'));
-
-    //   const brand = await brandfetch.getBrandById(id);
-
-    //   expect(brand).toBeNull();
-    //   expect(fetchMock.mock.calls[0][0]).toEqual(
-    //     `https://api.brandfetch.io/v1/brands/${id}`
-    //   );
-    //   expect(fetchMock.mock.calls[0][1].headers['Authorization']).toEqual(
-    //     `Bearer ${apiKey}`
-    //   );
-    // });
+    expect(result).toEqual(mockResponse.data);
   });
 });

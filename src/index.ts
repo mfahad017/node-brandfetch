@@ -1,1 +1,1 @@
-export { default as BrandFetch } from './branfetch';
+export { default as BrandFetch } from "./branfetch";

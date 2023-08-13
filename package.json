@@ -6,12 +6,19 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfahad017/node-brandfetch.git",
+    "homepage": "https://github.com/mfahad017/node-brandfetch#readme.md",
+    "issues": "https://github.com/mfahad017/node-brandfetch/issues"
+  },
   "scripts": {
     "test": "jest",
     "lint": "tsc",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "ci": " npm run test && npm run build",
-    "release": "npm run ci && changeset publish"
+    "release": "npm run ci && changeset publish",
+    "prettier": "prettier --write ."
   },
   "keywords": [],
   "author": "Fahad Nadeem",
@@ -28,6 +35,7 @@
     "babel-jest": "^29.5.0",
     "jest": "^29.5.0",
     "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
     "tsup": "^6.7.0"
   }

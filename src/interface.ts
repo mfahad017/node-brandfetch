@@ -1,11 +1,11 @@
 type BrandFetchLinkNames =
-  | 'twitter'
-  | 'facebook'
-  | 'instagram'
-  | 'github'
-  | 'youtube'
-  | 'linkedin'
-  | 'crunchbase';
+  | "twitter"
+  | "facebook"
+  | "instagram"
+  | "github"
+  | "youtube"
+  | "linkedin"
+  | "crunchbase";
 
 export interface IBrandFetch {
   name: string;
@@ -20,12 +20,12 @@ export interface IBrandFetch {
   }[];
 
   logos: {
-    type: 'logo' | 'icon' | 'symbol' | 'other';
-    theme: 'dark' | 'light' | null;
+    type: "logo" | "icon" | "symbol" | "other";
+    theme: "dark" | "light" | null;
     formats: {
       src: string;
-      format: 'svg' | 'png' | 'jpeg';
-      background: 'transparent' | null;
+      format: "svg" | "png" | "jpeg";
+      background: "transparent" | null;
       height: number;
       width: number;
       size: number;
@@ -33,24 +33,24 @@ export interface IBrandFetch {
   }[];
   colors: {
     hex: string;
-    type: 'accent' | 'dark' | 'light' | 'brand';
+    type: "accent" | "dark" | "light" | "brand";
     brightness: number;
   }[];
   fonts: {
     name: string;
-    type: 'title' | 'body';
-    origin: 'google' | 'custom' | 'system' | null;
+    type: "title" | "body";
+    origin: "google" | "custom" | "system" | null;
     originId: string | null;
   }[];
   images: {
-    type: 'banner' | 'other';
+    type: "banner" | "other";
     formats: {
       src: string;
-      format: 'png' | 'svg' | 'jpeg';
+      format: "png" | "svg" | "jpeg";
       height: number;
       width: number;
       size: number;
-      background: 'transparent' | null;
+      background: "transparent" | null;
     }[];
   }[];
 }

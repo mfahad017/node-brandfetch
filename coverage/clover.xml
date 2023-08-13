@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682066621207" clover="3.2.0">
-  <project timestamp="1682066621207" name="All files">
-    <metrics statements="26" coveredstatements="8" conditionals="18" coveredconditionals="7" methods="13" coveredmethods="2" elements="57" coveredelements="17" complexity="0" loc="26" ncloc="26" packages="1" files="1" classes="1"/>
-    <file name="branfetch.js" path="/home/fahad/Documents/Dev/Personal/node-brandfetch/src/branfetch.js">
-      <metrics statements="26" coveredstatements="8" conditionals="18" coveredconditionals="7" methods="13" coveredmethods="2"/>
-      <line num="2" count="2" type="cond" truecount="2" falsecount="1"/>
-      <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="5" count="0" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="11" count="2" type="cond" truecount="2" falsecount="1"/>
-      <line num="12" count="2" type="cond" truecount="3" falsecount="1"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="29" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="40" count="0" type="stmt"/>
-      <line num="46" count="0" type="stmt"/>
-      <line num="49" count="0" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
-      <line num="55" count="2" type="stmt"/>
+<coverage generated="1691910000700" clover="3.2.0">
+  <project timestamp="1691910000700" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="9" coveredelements="9" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
+    <file name="branfetch.ts" path="/home/fahad/Documents/Dev/Code/Personal/node-brandfetch/src/branfetch.ts">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

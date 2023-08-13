@@ -1,0 +1,8 @@
+*
+!dist
+!src
+!package.json
+!.nvmrc
+!LICENSE
+!CHANGELOG.md
+!Readme.md
